@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | StudySpace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2 class="logo">StudySpace<span>.</span></h2>
+                <p class="side-text">YOUR STUDY CORNER</p>
+            </div>
+
+            <nav>
+                <a href="index.html" class="active">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="tasks.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg>
+                    <span>My Tasks</span>
+                </a>
+                <a href="notes.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                    <span>My Notes</span>
+                </a>
+                <a href="timetable.html">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                    <span>Timetable</span>
+                </a>
+                <a href="progress.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 20V12M12 20V4M19 20v-6"/></svg>
+                    <span>My Progress</span>
+                </a>
+                <a href="resources.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+                    <span>Resources</span>
+                </a>
+                <a href="about.html">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+                    <span>About</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Small steps every day.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="welcome-small">WELCOME BACK</p>
+                    <h1>My Dashboard</h1>
+                </div>
+                <div class="profile">S</div>
+            </header>
+
+            <section class="welcome-banner">
+                <div class="banner-text">
+                    <p class="banner-label">YOUR PERSONAL STUDY SPACE</p>
+                    <h2>Make today count</h2>
+                    <p>Stay organized, focus on your goals, and make progress every day.</p>
+                    <a href="tasks.html" class="primary-btn">+ Add New Task</a>
+                </div>
+                <div class="banner-icon">
+                    <svg viewBox="0 0 24 24"><path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <p>Total Tasks</p>
+                    <h2 id="totalTasks">0</h2>
+                    <span>All your study tasks</span>
+                </div>
+                <div class="stat-card">
+                    <p>Completed</p>
+                    <h2 id="completedTasks">0</h2>
+                    <span>Tasks you have finished</span>
+                </div>
+                <div class="stat-card">
+                    <p>Pending</p>
+                    <h2 id="pendingTasks">0</h2>
+                    <span>Tasks left to do</span>
+                </div>
+                <div class="stat-card">
+                    <p>Study Sessions</p>
+                    <h2 id="totalSessions">0</h2>
+                    <span>Your planned sessions</span>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Today's Tasks</h2>
+                        <p>Keep track of what you need to do.</p>
+                    </div>
+                    <a href="tasks.html" class="view-link">View All &rarr;</a>
+                </div>
+
+                <div id="todayTasks" class="task-list">
+                    <div class="empty-state">
+                        <svg class="empty-icon" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg>
+                        <h3>No tasks yet</h3>
+                        <p>Add your first task and start planning your day.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Weekly Study Overview</h2>
+                        <p>Your study progress at a glance.</p>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-text">
+                        <span>Task Completion</span>
+                        <h2 id="completionPercent">0%</h2>
+                    </div>
+                    <div class="progress-track">
+                        <div id="completionBar" class="progress-fill"></div>
+                    </div>
+                    <p>Keep going. Every completed task is progress.</p>
+                </div>
+            </section>
+
+            <footer>
+                &copy; 2026 StudySpace. Built for better study days.
+            </footer>
+
+        </main>
+    </div>
+    
+    <script src="assets/Javascript/storage.js"></script>
+    <script src="assets/Javascript/data.js"></script>
+    <script src="assets/Javascript/main.js"></script>
+    <script src="assets/Javascript/dashboard.js"></script>
+
+</body>
+</html>

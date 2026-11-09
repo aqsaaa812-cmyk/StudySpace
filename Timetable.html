@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable | StudySpace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="timetable-page">
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2 class="logo">StudySpace<span>.</span></h2>
+                <p class="side-text">YOUR STUDY CORNER</p>
+            </div>
+
+            <nav>
+                <a href="index.html">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="tasks.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg>
+                    <span>My Tasks</span>
+                </a>
+                <a href="notes.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                    <span>My Notes</span>
+                </a>
+                <a href="timetable.html" class="active">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                    <span>Timetable</span>
+                </a>
+                <a href="progress.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 20V12M12 20V4M19 20v-6"/></svg>
+                    <span>My Progress</span>
+                </a>
+                <a href="resources.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+                    <span>Resources</span>
+                </a>
+                <a href="about.html">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+                    <span>About</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Small steps every day.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="welcome-small">PLAN YOUR WEEK</p>
+                    <h1>My Timetable</h1>
+                </div>
+                <div class="profile">S</div>
+            </header>
+
+            <section class="tt-intro">
+                <p class="tt-label">YOUR PERSONAL STUDY PLANNER</p>
+                <h2>Make time for what matters.</h2>
+                <p>Organize your classes, plan your study hours, and build a routine that works for you.</p>
+            </section>
+
+            <section class="dashboard-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Add Study Session</h2>
+                        <p>Plan your next study session below.</p>
+                    </div>
+                </div>
+
+                <form id="sessionForm" class="tt-form">
+
+                    <div class="form-group">
+                        <label for="sessionTitle">Session Title</label>
+                        <input type="text" id="sessionTitle" placeholder="e.g. JavaScript Practice" maxlength="60" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionSubject">Subject</label>
+                        <input type="text" id="sessionSubject" placeholder="e.g. Computer Science" maxlength="40" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionDay">Day</label>
+                        <select id="sessionDay" required>
+                            <option value="">Select Day</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionDate">Date (Optional)</label>
+                        <input type="date" id="sessionDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endTime">End Time</label>
+                        <input type="time" id="endTime" required>
+                    </div>
+
+                    <div class="form-group tt-full">
+                        <label for="sessionNotes">Notes (Optional)</label>
+                        <textarea id="sessionNotes" rows="3" maxlength="200" placeholder="Add a short note about this session..."></textarea>
+                    </div>
+
+                    <p id="sessionError" class="form-error tt-full" hidden></p>
+
+                    <button type="submit" class="primary-btn">+ Add Session</button>
+
+                </form>
+            </section>
+
+            <section class="dashboard-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Weekly Schedule</h2>
+                        <p>Your planned study sessions at a glance.</p>
+                    </div>
+                </div>
+
+                <div id="weeklySchedule" class="tt-schedule">
+                    <div class="empty-state">
+                        <h3>No sessions planned yet</h3>
+                        <p>Add your first session to organize your week.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                &copy; 2026 StudySpace. Built for better study days.
+            </footer>
+
+        </main>
+    </div>
+
+     <script src="assets/Javascript/storage.js"></script>
+    <script src="assets/Javascript/data.js"></script>
+    <script src="assets/Javascript/main.js"></script>
+    <script src="assets/Javascript/timetable.js"></script>
+
+
+</body>
+</html>
